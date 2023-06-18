@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/3149c1c8b5.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -14,6 +14,7 @@
     <hesder>
         <a href="/">Bookers</a>
         <li>
+          <i class="fa-solid fa-house"></i>
           <%= link_to "Home", "/" %>
         </li>
       <% if user_signed_in? %>
@@ -28,19 +29,24 @@
         </li>
       <% else %>
         <li>
+          <i class="fa-solid fa-link"></i>
           <%= link_to "About", about_path %>
         </li>
         <li>
+          <i class="fa-solid fa-user-plus"></i>
           <%= link_to "Sign up", new_user_registration_path %>
         </li>
         <li>
+          <i class="fa-solid fa-right-to-bracket"></i>
           <%= link_to "Log in", new_user_session_path %>
         </li>
       <% end %>
     </hesder>
-    <footer>
+   
+    <%= yield %>
+    
+     <footer>
       <p>CopyRight Infratop.inc</p>
     </footer>
-    <%= yield %>
   </body>
 </html>
